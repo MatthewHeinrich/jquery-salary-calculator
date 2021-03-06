@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vendor/JQuery.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    
+</head>
+<body>
+    <h1>Salary Calculator</h1>
+
+    <h3>Add Employee</h3>
+    <div id="employeeInput">
+        <input id="firstNameIn"  type="text" placeholder="First Name">
+        <input id="lastNameIn"  type="text" placeholder="Last Name">
+        <input id="idIn"  type="number" placeholder="ID">
+        <input id="titleIn"  type="text" placeholder="Title">
+        <input id="annuaSalaryIn"  type="number" placeholder="Annual Salary">
+
+        <button id="submitButton">Sumbit</button>
+
+
+    </div>
+   
+
+    
+
+    <div id="output">
+      <h3>Employees</h3>
+      
+        <table border=2; id="employeeOut">
+          <tr>
+              <td>First Name</td>
+              <td>Last Name</td>
+              <td>ID</td>
+              <td>Title</td>
+              <td>Annual Salary</td>
+          </tr>
+        </table>
+        <table border=2>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+        </table>
+      
+
+    </div>
+    
+
+    <h3>Total Monthly:$<span id="totaMonthly">0</span></h3>
+    
+</body>
+</html>
