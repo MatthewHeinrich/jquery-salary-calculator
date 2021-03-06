@@ -4,7 +4,29 @@ table {
 h1{
     background-color: grey;
     text-align: center;
+    padding: 3%;
+    margin: 0%;
 }
-#totaMonthly {
+#monthlyOut {
     text-align: right;
+    margin: 10%;
+}
+#employeeInput {
+    padding:5%
+}
+#addEmployee{
+    padding-left: 5%;
+    padding-top: 3%;
+}
+#employeeOut{
+    margin-left: 5%;
+}
+#employees{
+    padding-left: 5%;
+}
+.tableIn{
+    width: 100px;
+}
+#delete{
+    align-content:  center;
 }
