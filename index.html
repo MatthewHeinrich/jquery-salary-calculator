@@ -11,7 +11,7 @@
     
 </head>
 <body>
-    <h1>Salary Calculator</h1>
+  <h1>Salary Calculator</h1>
 
     <h2 id="addEmployee">Add Employee</h2>
     <div id="employeeInput">
@@ -32,30 +32,29 @@
     <div id="output">
       <h2 id="employees">Employees</h2>
       
-        <table border=2; id="employeeOut">
-          <tr>
+        <table border=2; id="employeeTable" >
+          <thead>
+            <tr>
               <td class="tableIn">First Name</td>
               <td class="tableIn">Last Name</td>
               <td class="tableIn">ID</td>
               <td class="tableIn">Title</td>
               <td class="tableIn">Annual Salary</td>
               <td class="tableIn">Delete</td>
-          </tr>
+            </tr>
+          </thead>
         </table>
-        <!-- <table border=2>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
 
-        </table> -->
+        <table border=2 id="employeeOut">
+          
+
+        </table>
       
 
     </div>
     
 
-    <h2 id="monthlyOut">Total Monthly:$<span id="totaMonthly">0</span></h2>
+    <h2 id="monthlyOut"><span id="monthlyText">Total Monthly:$<span id="totaMonthly">0</span></span></h2>
     
 </body>
 </html>

@@ -1,7 +1,7 @@
 $( document ).ready(onReady);
 
 let employees = [];
-// let newWage = 0;
+
 
 function onReady() {
     $('#submitButton').on('click', addEmployee);
@@ -19,8 +19,9 @@ function addEmployee() {
         last: $('#lastNameIn').val(),
         id: $('#idIn').val(),
         title: $('#titleIn').val(),
-        salary: $('#annuaSalaryIn').val()
+        salary: Number($('#annuaSalaryIn').val())
     } // end employeeObject
+    
     employees.push(employeeObject);
 
     $('#firstNameIn').val('');
@@ -31,45 +32,40 @@ function addEmployee() {
 
     showEmployees();
 
-    
-   
-    
-
 } // end addEmployee
 
 function showEmployees() {
     let el = $('#employeeOut');
     let count = $('#totaMonthly');
     let wage = 0;
+    let salary = 0;
     el.empty();
     count.empty();
     for (i=0; i<employees.length; i++) {
-         wage+=Number(employees[i].salary);
+        salary = employees[i].salary / 12;
+         wage+=salary;
          if(wage > 20000) {
+             // if wage > 20000, make  background red
             var style = document.createElement('style');
-                style.innerHTML = `
-                #monthlyOut {
-                background-color: red;
-                }
-                `;
+                style.innerHTML = `#monthlyText { background-color: red; }`;
                  document.head.appendChild(style);
-
-         }
-        // count.append(wage);
-        el.append(`<tr><td>${employees[i].first}</td> <td class="tableIn"> ${employees[i].last}</td> <td class="tableIn"> ${employees[i].id}</td> <td class="tableIn"> ${employees[i].title}</td> <td class="tableIn"> ${employees[i].salary}</td><td class="tableIn"><button id="delete">Delete</button></td></tr>`);
-        // wage = wage + Number(employees[i].salary);
-        // count.append(wage);
+          } // end if over 20000
+        //   if($('#firstNameIn').val() || $('#lastNameIn').val() || $('#idIn').val() || $('#annuaSalaryIn').val() === '' ) {
+        //     alert('Fill In All Boxes');
+        //   }
+        //   if ()
+        
+        el.append(`<tr><td class="tableIn">${employees[i].first}</td> 
+                        <td class="tableIn"> ${employees[i].last}</td>
+                        <td class="tableIn"> ${employees[i].id}</td>
+                        <td class="tableIn"> ${employees[i].title}</td>
+                        <td class="tableIn"> ${employees[i].salary}</td>
+                        <td class="tableIn"><button id="delete">Delete</button></td></tr>`);
+                    
     } // end for loop
     count.append(wage);
-    // newWage.push(wage);
-    
 } // end showEmployees
 
-// function addEmployeeWage() {
-//     let count = $('#totaMonthly');
-//     count.empty();
-//     for (salary of employeess.salary) {
-//         wage = wage + Number(employees.salary);
-//         count.append(wage);
-//     }
-// }
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
