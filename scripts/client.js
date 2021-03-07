@@ -63,7 +63,7 @@ function showEmployees() {
                         <td class="tableIn"><button id="delete">Delete</button></td></tr>`);
                     
     } // end for loop
-    count.append(wage);
+    count.append(wage.toFixed(2));
 } // end showEmployees
 
 function numberWithCommas(x) {
